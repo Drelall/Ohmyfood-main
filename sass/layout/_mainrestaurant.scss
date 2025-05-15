@@ -1,0 +1,22 @@
+/***********restaurant*************/
+.menus {
+  background-color: #f6f6f6;
+  h2 {
+    margin-bottom: 2rem;
+  }
+  .menucarte {
+    display: flex;
+    flex-wrap: wrap; /*permet de cinder les blocs en deux lignes,
+  ensuite quand on passsur mobile, 
+  il se mettent bien en colonne*/
+    gap: 2rem;
+  }
+  .carte {
+    border: 1px solid #9356dc;
+    height: 4rem;
+    flex-grow: 1;
+    min-width: 30rem;
+  }
+}
+
+

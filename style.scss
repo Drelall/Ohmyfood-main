@@ -1,33 +1,11 @@
-@use "/sass/base/_general.scss";
-@use "/sass/layout/_header.scss";
-@use "/sass/layout/_mainlocalisation.scss";
-@use "/sass/layout/_mainexploration.scss";
-@use "/sass/layout/_mainfonctionnement.scss";
+@use "sass/base/_general";
+@use "sass/layout/_header";
+@use "sass/layout/_mainlocalisation";
+@use "sass/layout/_mainexploration";
+@use "sass/layout/_mainfonctionnement";
+@use "sass/layout/_mainrestaurant";
 
 
-/***********restaurant*************/
-.menus {
-  background-color: #f6f6f6;
-}
-
-.menus h2 {
-  margin-bottom: 2rem;
-}
-
-.menus .menucarte {
-  display: flex;
-  flex-wrap: wrap; /*permet de cinder les blocs en deux lignes,
-ensuite quand on passsur mobile, 
-il se mettent bien en colonne*/
-  gap: 2rem;
-}
-
-.menus .carte {
-  border: 1px solid #9356dc;
-  height: 4rem;
-  flex-grow: 1;
-  min-width: 30rem;
-}
 
   
 /*# sourceMappingURL=style.css.map */
