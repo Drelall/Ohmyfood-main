@@ -1,153 +1,17 @@
-@charset "UTF-8";
-/*******Titre du site*********/
-*,
-*::before,
-*::after {
-  box-sizing: border-box; /* Évite que les bordures et
-les paddings ne "débordent" 
-en augmentant la taille totale d'un élément. */
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @use "/sass/base/_general.scss";
+ *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   style.scss 1:1  root stylesheet */
 
-body {
-  margin: 0;
-  font-family: "Roboto", sans-serif;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use \"/sass/base/_general.scss\";\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   style.scss 1:1  root stylesheet";
 }
-
-header {
-  font-family: "Shrikhand", cursive;
-  text-align: center;
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
-  padding: 0.3rem;
-  margin: 0;
-  position: relative;
-}
-
-main {
-  padding: 0 7rem;
-}
-
-/*******barre de localisation*********/
-.ville {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  background-color: #f3f3f3;
-  text-align: center;
-  padding: 0.5rem;
-}
-.ville i {
-  font-size: 1.5rem;
-}
-
-/********sous titre et exploration********/
-.explorer {
-  text-align: center;
-}
-.explorer h2 {
-  font-size: 3rem;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-  font-size: 2rem;
-}
-.explorer p {
-  font-size: 1rem;
-}
-.explorer button {
-  color: white;
-  font-weight: 300;
-  font-size: 1.5rem;
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 2rem;
-  box-shadow: 2px 1px 7px -3px #000000;
-  background-image: linear-gradient(to top, #9356dc, #ff79da);
-  transition: transform 200ms; /*vitesse du zoom*/
-  margin-top: 1.5rem;
-}
-.explorer button:hover { /*effet de zoom sur le boutton*/
-  transform: scale(1.02);
-  opacity: 0.9;
-}
-
-/********fonctionnement********/
-.fonctionnement ol {
-  display: flex;
-  gap: 2rem;
-}
-
-.fonctionnement {
-  counter-reset: numero; /*créé un compteur sur chaque onglet, 
-permet d'ajouter d'autre compteur à partir du html*/
-}
-
-.fonctionnement li::before { /*ajoute un chiffre avant chaque onglet*/
-  content: counter(numero);
-  counter-increment: numero;
-  color: white;
-  background-color: #9356dc;
-  width: 2rem;
-  height: 2rem;
-  display: grid; /* Active le modèle de mise en page par grille */
-  place-items: center; /*recentre les numéros*/
-  border-radius: 50%;
-  position: absolute;
-  bottom: 50%;
-  transform: translateY(50%);
-  left: -1rem;
-}
-
-.fonctionnement li {
-  position: relative; /*à mettre dans le parent 
-si position absolute dans le before*/
-  list-style-type: none;
-  background-color: #f6f6f6;
-  padding: 1.5rem 2rem;
-  flex-grow: 1;
-  border-radius: 1rem;
-  box-shadow: 2px 1px 7px -3px #000000;
-}
-
-.fonctionnement li i.fas {
-  color: #9356dc;
-  margin-right: 1rem;
-}
-
-.fonctionnement li:hover {
-  transform: scale(1.02); /*effet de zoom sur le boutton*/
-}
-
-/***********restaurant*************/
-.menus {
-  background-color: #f6f6f6;
-}
-
-.menus h2 {
-  margin-bottom: 2rem;
-}
-
-.menus .menucarte {
-  display: flex;
-  flex-wrap: wrap; /*permet de cinder les blocs en deux lignes,
-ensuite quand on passsur mobile, 
-il se mettent bien en colonne*/
-  gap: 2rem;
-}
-
-.menus .carte {
-  border: 1px solid #9356dc;
-  height: 4rem;
-  flex-grow: 1;
-  min-width: 30rem;
-}
-
-@media (max-width: 768px) {
-  .fonctionnement ol {
-    flex-direction: column;
-  }
-  div {
-    background-color: #f6f6f6;
-  }
-} 
-
-/*# sourceMappingURL=style.css.map */

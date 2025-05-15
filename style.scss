@@ -1,57 +1,9 @@
-@import "sass/base/_base.scss";
-@import "sass/layout/_header.scss";
-@import "sass/layout/_mainlocalisation.scss";
-@import "sass/layout/_mainexploration.scss";
+@use "/sass/base/_general.scss";
+@use "/sass/layout/_header.scss";
+@use "/sass/layout/_mainlocalisation.scss";
+@use "/sass/layout/_mainexploration.scss";
+@use "/sass/layout/_mainfonctionnement.scss";
 
-
-
-
-/********fonctionnement********/
-.fonctionnement ol {
-  display: flex;
-  gap: 2rem;
-}
-
-.fonctionnement {
-  counter-reset: numero; /*créé un compteur sur chaque onglet, 
-permet d'ajouter d'autre compteur à partir du html*/
-}
-
-.fonctionnement li::before { /*ajoute un chiffre avant chaque onglet*/
-  content: counter(numero);
-  counter-increment: numero;
-  color: white;
-  background-color: #9356dc;
-  width: 2rem;
-  height: 2rem;
-  display: grid; /* Active le modèle de mise en page par grille */
-  place-items: center; /*recentre les numéros*/
-  border-radius: 50%;
-  position: absolute;
-  bottom: 50%;
-  transform: translateY(50%);
-  left: -1rem;
-}
-
-.fonctionnement li {
-  position: relative; /*à mettre dans le parent 
-si position absolute dans le before*/
-  list-style-type: none;
-  background-color: #f6f6f6;
-  padding: 1.5rem 2rem;
-  flex-grow: 1;
-  border-radius: 1rem;
-  box-shadow: 2px 1px 7px -3px #000000;
-}
-
-.fonctionnement li i.fas {
-  color: #9356dc;
-  margin-right: 1rem;
-}
-
-.fonctionnement li:hover {
-  transform: scale(1.02); /*effet de zoom sur le boutton*/
-}
 
 /***********restaurant*************/
 .menus {
@@ -77,13 +29,5 @@ il se mettent bien en colonne*/
   min-width: 30rem;
 }
 
-@media (max-width: 768px) {
-  .fonctionnement ol {
-    flex-direction: column;
-  }
-  div {
-    background-color: #f6f6f6;
-  }
-
   
-}/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,57 @@
+@use "/sass/utils/_boxshadow.scss"; /*mixin de box shadow*/
+@use "/sass/utils/_zoom.scss";/*mixin de transform*/
+@use "/sass/utils/_variables.scss";/*mixin de variables*/
+@use "/sass/utils/_colors.scss"; /*mixin de colors*/
+
+
+/********fonctionnement********/
+.fonctionnement{
+    counter-reset: numero; /*créé un compteur sur chaque onglet, 
+    permet d'ajouter d'autre compteur à partir du html*/
+    & ol {
+        display: flex;
+        gap: 2rem;
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+    }
+    & li {
+        position: relative; /*à mettre dans le parent 
+      si position absolute dans le before*/
+        &::before { /*ajoute un chiffre avant chaque onglet*/
+          content: counter(numero);
+          counter-increment: numero;
+          color: white;
+          background-color: _colors.$purple;
+          width: 2 * _variables.$variable-fonct; /*valeur réutilisable*/
+          height: 2 * _variables.$variable-fonct;
+          display: grid; /* Active le modèle de mise en page par grille */
+          place-items: center; /*recentre les numéros*/
+          border-radius: 50%;
+          position: absolute;
+          bottom: 50%;
+          transform: translateY(50%);
+          left: -1 * _variables.$variable-fonct;
+        }
+      list-style-type: none;
+      background-color: #f6f6f6;
+      padding: 1.5rem 2rem;
+      flex-grow: 1;
+      border-radius: 1rem;
+      @include _boxshadow.base-shadow; /*mixin de box shadow*/
+      &:hover {
+        @include _zoom.transform-zoom; /*mixin de transform*/
+    }
+    i.fas {
+      color: _colors.$purple;
+      margin-right: 1rem;
+    }
+    }
+}
+
+
+
+
+
+
+
